@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кодирование и декодирование</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: #1e1e1e;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            width: 400px;
+        }
+        h1 {
+            text-align: center;
+            color: #bb86fc;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #ffffff;
+        }
+        input[type="number"], select, input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #444;
+            border-radius: 5px;
+            font-size: 14px;
+            background-color: #2a2a2a;
+            color: #ffffff;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #6200ea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #3700b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Введите данные</h1>
+        <form method="POST" action="/process">
+            <label for="a1">a1:</label>
+            <input type="number" id="a1" name="a1" required>
+
+            <label for="a2">a2:</label>
+            <input type="number" id="a2" name="a2" required>
+
+            <label for="a3">a3:</label>
+            <input type="number" id="a3" name="a3" required>
+
+            <label for="a4">a4:</label>
+            <input type="number" id="a4" name="a4" required>
+
+            <label for="E">Вектор ошибок E:</label>
+            <select id="E_select" name="E_select">
+                <option value="0,0,0,0,0,0,0,0">0,0,0,0,0,0,0,0</option>
+                <option value="1,0,0,0,0,0,0,0">1,0,0,0,0,0,0,0</option>
+                <option value="1,0,0,1,0,0,0,0">1,0,0,1,0,0,0,0</option>
+                <option value="0,1,1,1,0,0,0,0">0,1,1,1,0,0,0,0</option>
+            </select>
+            <label for="E_custom">или введите свой:</label>
+            <input type="text" id="E_custom" name="E_custom">
+
+            <button type="submit">Выполнить</button>
+        </form>
+    </div>
+</body>
+</html>
