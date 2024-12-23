@@ -120,4 +120,4 @@ def execute_code(a1, a2, a3, a4, E):
     return "\n".join(result)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=os.environ.get('PORT', 5000))
